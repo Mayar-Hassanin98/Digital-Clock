@@ -2,73 +2,16 @@
     <head>
         <title>Digital-Clock</title>
         <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-     
-        <style>
-            body{
-                height: 100%;
-                display:grid;
-                place-items: center;
-                background-color:#131419;
-            }
-            .clock{
-                height: 120px;
-                background-color:#131419;
-                width:500px;
-                border-width:10px;
-
-            }
-            .display{
-                color:darkred;
-                display:grid;
-                place-items: center;
-                justify-content: center;
-                height: 100%;
-                width: 100%;
-                font-size: 40px;
-                font-family: 'Orbitron',sans-serif;
-                letter-spacing: 5px;
-                box-shadow: -3px -3px 7px rgba(255,255,255,0.05),
-                3px 3px 5px rgba(0,0,0,0.5);
-
-            }
-
-        </style>
-
+        <link href='style.css' rel='stylesheet' type='text/css'>
+       
+        
     </head>
     <body>
         <div class="clock">
-            <div class="display"></div>
+            <div id="display"></div>
         </div>
 
-
-    <script>
-
-        const clock = document.querySelector(".display")
-        let time = new Date();
-        let day= 'AM';
-        let sec=time.getSeconds();
-        let min=time.getMinutes();
-        let hr=time.getHours();
-
-        if(hr > 12)
-        {
-            hr=hr-12;
-            day= PM;
-        }
-        if(hr ==0){
-            hr=12;
-        }
-        if(hr < 10){
-            hr='0'+hr;
-        }
-        if(min < 10){
-            min='0'+min;
-        }
-        if(sec < 10){
-            sec='0'+sec;
-        }
-
-        clock.innerText= `${hr} : ${min} : ${sec} ${day}`;
-        </script>
+        <script src="script.js"></script>
+       
     </body>
 </html>
